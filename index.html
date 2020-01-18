@@ -2,6 +2,17 @@
 <html>
   <head>
     <title>Title of the document</title>
+    <script type="text/javascript">
+ window.onload = setupRefresh;
+ 
+ var randomUrlToAppend = (Date.now() + Math.random()).toString();
+ function setupRefresh() {
+ setTimeout("refreshPage();", 500); // milliseconds
+         }
+ function refreshPage() {
+ window.location = location.href + "?cacheKiller=" + randomUrlToAppend;
+         }
+ </script>
   </head>
   <body>
     <h1>PDF Example with iframe</h1>
